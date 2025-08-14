@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zynqo — Viral News that Pops</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Zynqo — Viral, visual, and addictive news. Trending India & global stories with stunning visuals." />
+  <meta property="og:title" content="Zynqo — Viral News that Pops" />
+  <meta property="og:description" content="Trending India & global stories with stunning visuals." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#ff5f6d" id="themeColor" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">Zynqo</span>
+      <span class="spark">⚡</span>
+    </div>
+
+    <div class="actions">
+      <div class="pillbar" id="pillbar" role="tablist" aria-label="Categories">
+        <button class="pill active" data-category="">All</button>
+        <button class="pill" data-category="technology">Tech</button>
+        <button class="pill" data-category="entertainment">Entertainment</button>
+        <button class="pill" data-category="sports">Sports</button>
+        <button class="pill" data-category="business">Finance</button>
+        <button class="pill" data-category="health">Health</button>
+        <button class="pill" data-category="science">Science</button>
+      </div>
+
+      <div class="searchwrap">
+        <input id="searchInput" type="search" placeholder="🔍 Search headlines…" aria-label="Search" />
+      </div>
+
+      <button id="themeToggle" class="iconbtn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <!-- Marquee / ticker -->
+  <section class="ticker" aria-live="polite">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </section>
+
+  <!-- Hero (featured) -->
+  <section id="hero" class="hero glass hidden" aria-labelledby="heroTitle">
+    <div class="hero-media">
+      <img id="heroImg" alt="Featured story image" />
+      <span class="chip">Top Trending</span>
+    </div>
+    <div class="hero-content">
+      <h2 id="heroTitle"></h2>
+      <p id="heroDesc"></p>
+      <div class="hero-meta">
+        <span id="heroSrc"></span>
+        <span id="heroDate"></span>
+      </div>
+      <div class="hero-cta">
+        <a id="heroLink" class="btn" target="_blank" rel="noopener">Read Full Story</a>
+        <button id="heroShare" class="btn outline">Share</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <main id="grid" class="grid" aria-live="polite" aria-busy="true"></main>
+
+  <!-- Infinite scroll sentinel -->
+  <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+
+  <!-- Back to top -->
+  <button id="toTop" class="totop" aria-label="Back to top">↑</button>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Newsletter modal (local only) -->
+  <dialog id="subDialog" class="modal">
+    <form method="dialog" class="modal-card">
+      <h3>Join Zynqo Squad 💌</h3>
+      <p>Get the top 5 viral stories in your inbox. Free.</p>
+      <input type="email" placeholder="your@email.com" required />
+      <div class="modal-actions">
+        <button class="btn" value="subscribe">Subscribe</button>
+        <button class="btn outline" value="close">Maybe later</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Zynqo. All rights reserved.</div>
+    <div class="links">
+      <a href="#" rel="nofollow">Privacy</a>
+      <a href="#" rel="nofollow">Terms</a>
+      <a href="#" rel="nofollow">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
